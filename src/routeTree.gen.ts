@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BadgesRouteImport } from './routes/badges'
 import { Route as CourseRouteImport } from './routes/course'
 import { Route as DailyGoalRouteImport } from './routes/daily-goal'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as FriendsRouteImport } from './routes/friends'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LessonRouteImport } from './routes/lesson'
@@ -23,7 +24,9 @@ import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as RewardsRouteImport } from './routes/rewards'
 import { Route as SectionRouteImport } from './routes/section'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SplashRouteImport } from './routes/splash'
 import { Route as StreakRouteImport } from './routes/streak'
 
@@ -45,6 +48,11 @@ const CourseRoute = CourseRouteImport.update({
 const DailyGoalRoute = DailyGoalRouteImport.update({
   id: '/daily-goal',
   path: '/daily-goal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FriendsRoute = FriendsRouteImport.update({
@@ -97,9 +105,19 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RewardsRoute = RewardsRouteImport.update({
+  id: '/rewards',
+  path: '/rewards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SectionRoute = SectionRouteImport.update({
   id: '/section',
   path: '/section',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SplashRoute = SplashRouteImport.update({
@@ -118,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/badges': typeof BadgesRoute
   '/course': typeof CourseRoute
   '/daily-goal': typeof DailyGoalRoute
+  '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
@@ -128,7 +147,9 @@ export interface FileRoutesByFullPath {
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
   '/section': typeof SectionRoute
+  '/settings': typeof SettingsRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
 }
@@ -137,6 +158,7 @@ export interface FileRoutesByTo {
   '/badges': typeof BadgesRoute
   '/course': typeof CourseRoute
   '/daily-goal': typeof DailyGoalRoute
+  '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
@@ -147,7 +169,9 @@ export interface FileRoutesByTo {
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
   '/section': typeof SectionRoute
+  '/settings': typeof SettingsRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
 }
@@ -157,6 +181,7 @@ export interface FileRoutesById {
   '/badges': typeof BadgesRoute
   '/course': typeof CourseRoute
   '/daily-goal': typeof DailyGoalRoute
+  '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
@@ -167,7 +192,9 @@ export interface FileRoutesById {
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
   '/section': typeof SectionRoute
+  '/settings': typeof SettingsRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
 }
@@ -178,6 +205,7 @@ export interface FileRouteTypes {
     | '/badges'
     | '/course'
     | '/daily-goal'
+    | '/events'
     | '/friends'
     | '/leaderboard'
     | '/lesson'
@@ -188,7 +216,9 @@ export interface FileRouteTypes {
     | '/quiz'
     | '/quiz-result'
     | '/register'
+    | '/rewards'
     | '/section'
+    | '/settings'
     | '/splash'
     | '/streak'
   fileRoutesByTo: FileRoutesByTo
@@ -197,6 +227,7 @@ export interface FileRouteTypes {
     | '/badges'
     | '/course'
     | '/daily-goal'
+    | '/events'
     | '/friends'
     | '/leaderboard'
     | '/lesson'
@@ -207,7 +238,9 @@ export interface FileRouteTypes {
     | '/quiz'
     | '/quiz-result'
     | '/register'
+    | '/rewards'
     | '/section'
+    | '/settings'
     | '/splash'
     | '/streak'
   id:
@@ -216,6 +249,7 @@ export interface FileRouteTypes {
     | '/badges'
     | '/course'
     | '/daily-goal'
+    | '/events'
     | '/friends'
     | '/leaderboard'
     | '/lesson'
@@ -226,7 +260,9 @@ export interface FileRouteTypes {
     | '/quiz'
     | '/quiz-result'
     | '/register'
+    | '/rewards'
     | '/section'
+    | '/settings'
     | '/splash'
     | '/streak'
   fileRoutesById: FileRoutesById
@@ -236,6 +272,7 @@ export interface RootRouteChildren {
   BadgesRoute: typeof BadgesRoute
   CourseRoute: typeof CourseRoute
   DailyGoalRoute: typeof DailyGoalRoute
+  EventsRoute: typeof EventsRoute
   FriendsRoute: typeof FriendsRoute
   LeaderboardRoute: typeof LeaderboardRoute
   LessonRoute: typeof LessonRoute
@@ -246,7 +283,9 @@ export interface RootRouteChildren {
   QuizRoute: typeof QuizRoute
   QuizResultRoute: typeof QuizResultRoute
   RegisterRoute: typeof RegisterRoute
+  RewardsRoute: typeof RewardsRoute
   SectionRoute: typeof SectionRoute
+  SettingsRoute: typeof SettingsRoute
   SplashRoute: typeof SplashRoute
   StreakRoute: typeof StreakRoute
 }
@@ -279,6 +318,13 @@ declare module '@tanstack/react-router' {
       path: '/daily-goal'
       fullPath: '/daily-goal'
       preLoaderRoute: typeof DailyGoalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/friends': {
@@ -351,11 +397,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rewards': {
+      id: '/rewards'
+      path: '/rewards'
+      fullPath: '/rewards'
+      preLoaderRoute: typeof RewardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/section': {
       id: '/section'
       path: '/section'
       fullPath: '/section'
       preLoaderRoute: typeof SectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/splash': {
@@ -380,6 +440,7 @@ const rootRouteChildren: RootRouteChildren = {
   BadgesRoute: BadgesRoute,
   CourseRoute: CourseRoute,
   DailyGoalRoute: DailyGoalRoute,
+  EventsRoute: EventsRoute,
   FriendsRoute: FriendsRoute,
   LeaderboardRoute: LeaderboardRoute,
   LessonRoute: LessonRoute,
@@ -390,7 +451,9 @@ const rootRouteChildren: RootRouteChildren = {
   QuizRoute: QuizRoute,
   QuizResultRoute: QuizResultRoute,
   RegisterRoute: RegisterRoute,
+  RewardsRoute: RewardsRoute,
   SectionRoute: SectionRoute,
+  SettingsRoute: SettingsRoute,
   SplashRoute: SplashRoute,
   StreakRoute: StreakRoute,
 }
