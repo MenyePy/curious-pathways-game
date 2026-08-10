@@ -10,12 +10,16 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BadgesRouteImport } from './routes/badges'
 import { Route as CourseRouteImport } from './routes/course'
 import { Route as DailyGoalRouteImport } from './routes/daily-goal'
+import { Route as FriendsRouteImport } from './routes/friends'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LessonRouteImport } from './routes/lesson'
 import { Route as LessonVideoRouteImport } from './routes/lesson-video'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
 import { Route as RegisterRouteImport } from './routes/register'
@@ -28,6 +32,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BadgesRoute = BadgesRouteImport.update({
+  id: '/badges',
+  path: '/badges',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CourseRoute = CourseRouteImport.update({
   id: '/course',
   path: '/course',
@@ -36,6 +45,16 @@ const CourseRoute = CourseRouteImport.update({
 const DailyGoalRoute = DailyGoalRouteImport.update({
   id: '/daily-goal',
   path: '/daily-goal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FriendsRoute = FriendsRouteImport.update({
+  id: '/friends',
+  path: '/friends',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LessonRoute = LessonRouteImport.update({
@@ -56,6 +75,11 @@ const LoginRoute = LoginRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuizRoute = QuizRouteImport.update({
@@ -91,12 +115,16 @@ const StreakRoute = StreakRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/badges': typeof BadgesRoute
   '/course': typeof CourseRoute
   '/daily-goal': typeof DailyGoalRoute
+  '/friends': typeof FriendsRoute
+  '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
@@ -106,12 +134,16 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/badges': typeof BadgesRoute
   '/course': typeof CourseRoute
   '/daily-goal': typeof DailyGoalRoute
+  '/friends': typeof FriendsRoute
+  '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
@@ -122,12 +154,16 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/badges': typeof BadgesRoute
   '/course': typeof CourseRoute
   '/daily-goal': typeof DailyGoalRoute
+  '/friends': typeof FriendsRoute
+  '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
@@ -139,12 +175,16 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/badges'
     | '/course'
     | '/daily-goal'
+    | '/friends'
+    | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/profile'
     | '/quiz'
     | '/quiz-result'
     | '/register'
@@ -154,12 +194,16 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/badges'
     | '/course'
     | '/daily-goal'
+    | '/friends'
+    | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/profile'
     | '/quiz'
     | '/quiz-result'
     | '/register'
@@ -169,12 +213,16 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/badges'
     | '/course'
     | '/daily-goal'
+    | '/friends'
+    | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/profile'
     | '/quiz'
     | '/quiz-result'
     | '/register'
@@ -185,12 +233,16 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BadgesRoute: typeof BadgesRoute
   CourseRoute: typeof CourseRoute
   DailyGoalRoute: typeof DailyGoalRoute
+  FriendsRoute: typeof FriendsRoute
+  LeaderboardRoute: typeof LeaderboardRoute
   LessonRoute: typeof LessonRoute
   LessonVideoRoute: typeof LessonVideoRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
   QuizRoute: typeof QuizRoute
   QuizResultRoute: typeof QuizResultRoute
   RegisterRoute: typeof RegisterRoute
@@ -208,6 +260,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/badges': {
+      id: '/badges'
+      path: '/badges'
+      fullPath: '/badges'
+      preLoaderRoute: typeof BadgesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/course': {
       id: '/course'
       path: '/course'
@@ -220,6 +279,20 @@ declare module '@tanstack/react-router' {
       path: '/daily-goal'
       fullPath: '/daily-goal'
       preLoaderRoute: typeof DailyGoalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/friends': {
+      id: '/friends'
+      path: '/friends'
+      fullPath: '/friends'
+      preLoaderRoute: typeof FriendsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lesson': {
@@ -248,6 +321,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quiz': {
@@ -297,12 +377,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BadgesRoute: BadgesRoute,
   CourseRoute: CourseRoute,
   DailyGoalRoute: DailyGoalRoute,
+  FriendsRoute: FriendsRoute,
+  LeaderboardRoute: LeaderboardRoute,
   LessonRoute: LessonRoute,
   LessonVideoRoute: LessonVideoRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
   QuizRoute: QuizRoute,
   QuizResultRoute: QuizResultRoute,
   RegisterRoute: RegisterRoute,
