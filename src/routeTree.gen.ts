@@ -25,10 +25,13 @@ import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as RewardsRouteImport } from './routes/rewards'
+import { Route as ScreensRouteImport } from './routes/screens'
 import { Route as SectionRouteImport } from './routes/section'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SplashRouteImport } from './routes/splash'
 import { Route as StreakRouteImport } from './routes/streak'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminEditorRouteImport } from './routes/admin/editor'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -110,6 +113,11 @@ const RewardsRoute = RewardsRouteImport.update({
   path: '/rewards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ScreensRoute = ScreensRouteImport.update({
+  id: '/screens',
+  path: '/screens',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SectionRoute = SectionRouteImport.update({
   id: '/section',
   path: '/section',
@@ -130,6 +138,16 @@ const StreakRoute = StreakRouteImport.update({
   path: '/streak',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminEditorRoute = AdminEditorRouteImport.update({
+  id: '/admin/editor',
+  path: '/admin/editor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -148,10 +166,13 @@ export interface FileRoutesByFullPath {
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
   '/rewards': typeof RewardsRoute
+  '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/admin/editor': typeof AdminEditorRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -170,10 +191,13 @@ export interface FileRoutesByTo {
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
   '/rewards': typeof RewardsRoute
+  '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/admin/editor': typeof AdminEditorRoute
+  '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -193,10 +217,13 @@ export interface FileRoutesById {
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
   '/rewards': typeof RewardsRoute
+  '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/admin/editor': typeof AdminEditorRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -217,10 +244,13 @@ export interface FileRouteTypes {
     | '/quiz-result'
     | '/register'
     | '/rewards'
+    | '/screens'
     | '/section'
     | '/settings'
     | '/splash'
     | '/streak'
+    | '/admin/editor'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -239,10 +269,13 @@ export interface FileRouteTypes {
     | '/quiz-result'
     | '/register'
     | '/rewards'
+    | '/screens'
     | '/section'
     | '/settings'
     | '/splash'
     | '/streak'
+    | '/admin/editor'
+    | '/admin'
   id:
     | '__root__'
     | '/'
@@ -261,10 +294,13 @@ export interface FileRouteTypes {
     | '/quiz-result'
     | '/register'
     | '/rewards'
+    | '/screens'
     | '/section'
     | '/settings'
     | '/splash'
     | '/streak'
+    | '/admin/editor'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -284,10 +320,13 @@ export interface RootRouteChildren {
   QuizResultRoute: typeof QuizResultRoute
   RegisterRoute: typeof RegisterRoute
   RewardsRoute: typeof RewardsRoute
+  ScreensRoute: typeof ScreensRoute
   SectionRoute: typeof SectionRoute
   SettingsRoute: typeof SettingsRoute
   SplashRoute: typeof SplashRoute
   StreakRoute: typeof StreakRoute
+  AdminEditorRoute: typeof AdminEditorRoute
+  AdminIndexRoute: typeof AdminIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -404,6 +443,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RewardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/screens': {
+      id: '/screens'
+      path: '/screens'
+      fullPath: '/screens'
+      preLoaderRoute: typeof ScreensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/section': {
       id: '/section'
       path: '/section'
@@ -432,6 +478,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StreakRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/editor': {
+      id: '/admin/editor'
+      path: '/admin/editor'
+      fullPath: '/admin/editor'
+      preLoaderRoute: typeof AdminEditorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -452,11 +512,24 @@ const rootRouteChildren: RootRouteChildren = {
   QuizResultRoute: QuizResultRoute,
   RegisterRoute: RegisterRoute,
   RewardsRoute: RewardsRoute,
+  ScreensRoute: ScreensRoute,
   SectionRoute: SectionRoute,
   SettingsRoute: SettingsRoute,
   SplashRoute: SplashRoute,
   StreakRoute: StreakRoute,
+  AdminEditorRoute: AdminEditorRoute,
+  AdminIndexRoute: AdminIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
