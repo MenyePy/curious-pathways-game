@@ -10,33 +10,323 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BadgesRouteImport } from './routes/badges'
+import { Route as CourseRouteImport } from './routes/course'
+import { Route as DailyGoalRouteImport } from './routes/daily-goal'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as FriendsRouteImport } from './routes/friends'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
+import { Route as LessonRouteImport } from './routes/lesson'
+import { Route as LessonVideoRouteImport } from './routes/lesson-video'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as QuizResultRouteImport } from './routes/quiz-result'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as RewardsRouteImport } from './routes/rewards'
+import { Route as ScreensRouteImport } from './routes/screens'
+import { Route as SectionRouteImport } from './routes/section'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SplashRouteImport } from './routes/splash'
+import { Route as StreakRouteImport } from './routes/streak'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminEditorRouteImport } from './routes/admin/editor'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BadgesRoute = BadgesRouteImport.update({
+  id: '/badges',
+  path: '/badges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CourseRoute = CourseRouteImport.update({
+  id: '/course',
+  path: '/course',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DailyGoalRoute = DailyGoalRouteImport.update({
+  id: '/daily-goal',
+  path: '/daily-goal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FriendsRoute = FriendsRouteImport.update({
+  id: '/friends',
+  path: '/friends',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonRoute = LessonRouteImport.update({
+  id: '/lesson',
+  path: '/lesson',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonVideoRoute = LessonVideoRouteImport.update({
+  id: '/lesson-video',
+  path: '/lesson-video',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizResultRoute = QuizResultRouteImport.update({
+  id: '/quiz-result',
+  path: '/quiz-result',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RewardsRoute = RewardsRouteImport.update({
+  id: '/rewards',
+  path: '/rewards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScreensRoute = ScreensRouteImport.update({
+  id: '/screens',
+  path: '/screens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectionRoute = SectionRouteImport.update({
+  id: '/section',
+  path: '/section',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplashRoute = SplashRouteImport.update({
+  id: '/splash',
+  path: '/splash',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StreakRoute = StreakRouteImport.update({
+  id: '/streak',
+  path: '/streak',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminEditorRoute = AdminEditorRouteImport.update({
+  id: '/admin/editor',
+  path: '/admin/editor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/badges': typeof BadgesRoute
+  '/course': typeof CourseRoute
+  '/daily-goal': typeof DailyGoalRoute
+  '/events': typeof EventsRoute
+  '/friends': typeof FriendsRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/lesson': typeof LessonRoute
+  '/lesson-video': typeof LessonVideoRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/quiz': typeof QuizRoute
+  '/quiz-result': typeof QuizResultRoute
+  '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
+  '/screens': typeof ScreensRoute
+  '/section': typeof SectionRoute
+  '/settings': typeof SettingsRoute
+  '/splash': typeof SplashRoute
+  '/streak': typeof StreakRoute
+  '/admin/editor': typeof AdminEditorRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/badges': typeof BadgesRoute
+  '/course': typeof CourseRoute
+  '/daily-goal': typeof DailyGoalRoute
+  '/events': typeof EventsRoute
+  '/friends': typeof FriendsRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/lesson': typeof LessonRoute
+  '/lesson-video': typeof LessonVideoRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/quiz': typeof QuizRoute
+  '/quiz-result': typeof QuizResultRoute
+  '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
+  '/screens': typeof ScreensRoute
+  '/section': typeof SectionRoute
+  '/settings': typeof SettingsRoute
+  '/splash': typeof SplashRoute
+  '/streak': typeof StreakRoute
+  '/admin/editor': typeof AdminEditorRoute
+  '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/badges': typeof BadgesRoute
+  '/course': typeof CourseRoute
+  '/daily-goal': typeof DailyGoalRoute
+  '/events': typeof EventsRoute
+  '/friends': typeof FriendsRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/lesson': typeof LessonRoute
+  '/lesson-video': typeof LessonVideoRoute
+  '/login': typeof LoginRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
+  '/quiz': typeof QuizRoute
+  '/quiz-result': typeof QuizResultRoute
+  '/register': typeof RegisterRoute
+  '/rewards': typeof RewardsRoute
+  '/screens': typeof ScreensRoute
+  '/section': typeof SectionRoute
+  '/settings': typeof SettingsRoute
+  '/splash': typeof SplashRoute
+  '/streak': typeof StreakRoute
+  '/admin/editor': typeof AdminEditorRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/badges'
+    | '/course'
+    | '/daily-goal'
+    | '/events'
+    | '/friends'
+    | '/leaderboard'
+    | '/lesson'
+    | '/lesson-video'
+    | '/login'
+    | '/onboarding'
+    | '/profile'
+    | '/quiz'
+    | '/quiz-result'
+    | '/register'
+    | '/rewards'
+    | '/screens'
+    | '/section'
+    | '/settings'
+    | '/splash'
+    | '/streak'
+    | '/admin/editor'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/badges'
+    | '/course'
+    | '/daily-goal'
+    | '/events'
+    | '/friends'
+    | '/leaderboard'
+    | '/lesson'
+    | '/lesson-video'
+    | '/login'
+    | '/onboarding'
+    | '/profile'
+    | '/quiz'
+    | '/quiz-result'
+    | '/register'
+    | '/rewards'
+    | '/screens'
+    | '/section'
+    | '/settings'
+    | '/splash'
+    | '/streak'
+    | '/admin/editor'
+    | '/admin'
+  id:
+    | '__root__'
+    | '/'
+    | '/badges'
+    | '/course'
+    | '/daily-goal'
+    | '/events'
+    | '/friends'
+    | '/leaderboard'
+    | '/lesson'
+    | '/lesson-video'
+    | '/login'
+    | '/onboarding'
+    | '/profile'
+    | '/quiz'
+    | '/quiz-result'
+    | '/register'
+    | '/rewards'
+    | '/screens'
+    | '/section'
+    | '/settings'
+    | '/splash'
+    | '/streak'
+    | '/admin/editor'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BadgesRoute: typeof BadgesRoute
+  CourseRoute: typeof CourseRoute
+  DailyGoalRoute: typeof DailyGoalRoute
+  EventsRoute: typeof EventsRoute
+  FriendsRoute: typeof FriendsRoute
+  LeaderboardRoute: typeof LeaderboardRoute
+  LessonRoute: typeof LessonRoute
+  LessonVideoRoute: typeof LessonVideoRoute
+  LoginRoute: typeof LoginRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
+  QuizRoute: typeof QuizRoute
+  QuizResultRoute: typeof QuizResultRoute
+  RegisterRoute: typeof RegisterRoute
+  RewardsRoute: typeof RewardsRoute
+  ScreensRoute: typeof ScreensRoute
+  SectionRoute: typeof SectionRoute
+  SettingsRoute: typeof SettingsRoute
+  SplashRoute: typeof SplashRoute
+  StreakRoute: typeof StreakRoute
+  AdminEditorRoute: typeof AdminEditorRoute
+  AdminIndexRoute: typeof AdminIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +338,188 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/badges': {
+      id: '/badges'
+      path: '/badges'
+      fullPath: '/badges'
+      preLoaderRoute: typeof BadgesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course': {
+      id: '/course'
+      path: '/course'
+      fullPath: '/course'
+      preLoaderRoute: typeof CourseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/daily-goal': {
+      id: '/daily-goal'
+      path: '/daily-goal'
+      fullPath: '/daily-goal'
+      preLoaderRoute: typeof DailyGoalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/friends': {
+      id: '/friends'
+      path: '/friends'
+      fullPath: '/friends'
+      preLoaderRoute: typeof FriendsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lesson': {
+      id: '/lesson'
+      path: '/lesson'
+      fullPath: '/lesson'
+      preLoaderRoute: typeof LessonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lesson-video': {
+      id: '/lesson-video'
+      path: '/lesson-video'
+      fullPath: '/lesson-video'
+      preLoaderRoute: typeof LessonVideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz-result': {
+      id: '/quiz-result'
+      path: '/quiz-result'
+      fullPath: '/quiz-result'
+      preLoaderRoute: typeof QuizResultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rewards': {
+      id: '/rewards'
+      path: '/rewards'
+      fullPath: '/rewards'
+      preLoaderRoute: typeof RewardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/screens': {
+      id: '/screens'
+      path: '/screens'
+      fullPath: '/screens'
+      preLoaderRoute: typeof ScreensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/section': {
+      id: '/section'
+      path: '/section'
+      fullPath: '/section'
+      preLoaderRoute: typeof SectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/splash': {
+      id: '/splash'
+      path: '/splash'
+      fullPath: '/splash'
+      preLoaderRoute: typeof SplashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/streak': {
+      id: '/streak'
+      path: '/streak'
+      fullPath: '/streak'
+      preLoaderRoute: typeof StreakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/editor': {
+      id: '/admin/editor'
+      path: '/admin/editor'
+      fullPath: '/admin/editor'
+      preLoaderRoute: typeof AdminEditorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BadgesRoute: BadgesRoute,
+  CourseRoute: CourseRoute,
+  DailyGoalRoute: DailyGoalRoute,
+  EventsRoute: EventsRoute,
+  FriendsRoute: FriendsRoute,
+  LeaderboardRoute: LeaderboardRoute,
+  LessonRoute: LessonRoute,
+  LessonVideoRoute: LessonVideoRoute,
+  LoginRoute: LoginRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
+  QuizRoute: QuizRoute,
+  QuizResultRoute: QuizResultRoute,
+  RegisterRoute: RegisterRoute,
+  RewardsRoute: RewardsRoute,
+  ScreensRoute: ScreensRoute,
+  SectionRoute: SectionRoute,
+  SettingsRoute: SettingsRoute,
+  SplashRoute: SplashRoute,
+  StreakRoute: StreakRoute,
+  AdminEditorRoute: AdminEditorRoute,
+  AdminIndexRoute: AdminIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
