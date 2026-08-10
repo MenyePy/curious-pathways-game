@@ -92,5 +92,5 @@ export const dialogue: Record<string, DialogueLine> = {
 };
 
 export function getCharacter(id: string): AvatarCharacter {
-  return characters.find((c) => c.id === id) ?? characters[0];
+  return characters.find((c) => c.id === id) ?? (characters[0] as AvatarCharacter);
 }
