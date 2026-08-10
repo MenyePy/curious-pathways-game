@@ -11,13 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CourseRouteImport } from './routes/course'
+import { Route as DailyGoalRouteImport } from './routes/daily-goal'
 import { Route as LessonRouteImport } from './routes/lesson'
 import { Route as LessonVideoRouteImport } from './routes/lesson-video'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as QuizResultRouteImport } from './routes/quiz-result'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as SectionRouteImport } from './routes/section'
 import { Route as SplashRouteImport } from './routes/splash'
+import { Route as StreakRouteImport } from './routes/streak'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -27,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const CourseRoute = CourseRouteImport.update({
   id: '/course',
   path: '/course',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DailyGoalRoute = DailyGoalRouteImport.update({
+  id: '/daily-goal',
+  path: '/daily-goal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LessonRoute = LessonRouteImport.update({
@@ -49,6 +58,16 @@ const OnboardingRoute = OnboardingRouteImport.update({
   path: '/onboarding',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizResultRoute = QuizResultRouteImport.update({
+  id: '/quiz-result',
+  path: '/quiz-result',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
@@ -64,87 +83,120 @@ const SplashRoute = SplashRouteImport.update({
   path: '/splash',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StreakRoute = StreakRouteImport.update({
+  id: '/streak',
+  path: '/streak',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/course': typeof CourseRoute
+  '/daily-goal': typeof DailyGoalRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/quiz': typeof QuizRoute
+  '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
   '/section': typeof SectionRoute
   '/splash': typeof SplashRoute
+  '/streak': typeof StreakRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/course': typeof CourseRoute
+  '/daily-goal': typeof DailyGoalRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/quiz': typeof QuizRoute
+  '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
   '/section': typeof SectionRoute
   '/splash': typeof SplashRoute
+  '/streak': typeof StreakRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/course': typeof CourseRoute
+  '/daily-goal': typeof DailyGoalRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/quiz': typeof QuizRoute
+  '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
   '/section': typeof SectionRoute
   '/splash': typeof SplashRoute
+  '/streak': typeof StreakRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/course'
+    | '/daily-goal'
     | '/lesson'
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/quiz'
+    | '/quiz-result'
     | '/register'
     | '/section'
     | '/splash'
+    | '/streak'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/course'
+    | '/daily-goal'
     | '/lesson'
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/quiz'
+    | '/quiz-result'
     | '/register'
     | '/section'
     | '/splash'
+    | '/streak'
   id:
     | '__root__'
     | '/'
     | '/course'
+    | '/daily-goal'
     | '/lesson'
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/quiz'
+    | '/quiz-result'
     | '/register'
     | '/section'
     | '/splash'
+    | '/streak'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CourseRoute: typeof CourseRoute
+  DailyGoalRoute: typeof DailyGoalRoute
   LessonRoute: typeof LessonRoute
   LessonVideoRoute: typeof LessonVideoRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
+  QuizRoute: typeof QuizRoute
+  QuizResultRoute: typeof QuizResultRoute
   RegisterRoute: typeof RegisterRoute
   SectionRoute: typeof SectionRoute
   SplashRoute: typeof SplashRoute
+  StreakRoute: typeof StreakRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -161,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/course'
       fullPath: '/course'
       preLoaderRoute: typeof CourseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/daily-goal': {
+      id: '/daily-goal'
+      path: '/daily-goal'
+      fullPath: '/daily-goal'
+      preLoaderRoute: typeof DailyGoalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lesson': {
@@ -191,6 +250,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz-result': {
+      id: '/quiz-result'
+      path: '/quiz-result'
+      fullPath: '/quiz-result'
+      preLoaderRoute: typeof QuizResultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/register': {
       id: '/register'
       path: '/register'
@@ -212,19 +285,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SplashRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/streak': {
+      id: '/streak'
+      path: '/streak'
+      fullPath: '/streak'
+      preLoaderRoute: typeof StreakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CourseRoute: CourseRoute,
+  DailyGoalRoute: DailyGoalRoute,
   LessonRoute: LessonRoute,
   LessonVideoRoute: LessonVideoRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
+  QuizRoute: QuizRoute,
+  QuizResultRoute: QuizResultRoute,
   RegisterRoute: RegisterRoute,
   SectionRoute: SectionRoute,
   SplashRoute: SplashRoute,
+  StreakRoute: StreakRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
