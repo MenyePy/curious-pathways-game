@@ -10,14 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CourseRouteImport } from './routes/course'
+import { Route as LessonRouteImport } from './routes/lesson'
+import { Route as LessonVideoRouteImport } from './routes/lesson-video'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as SectionRouteImport } from './routes/section'
 import { Route as SplashRouteImport } from './routes/splash'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CourseRoute = CourseRouteImport.update({
+  id: '/course',
+  path: '/course',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonRoute = LessonRouteImport.update({
+  id: '/lesson',
+  path: '/lesson',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonVideoRoute = LessonVideoRouteImport.update({
+  id: '/lesson-video',
+  path: '/lesson-video',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -35,6 +54,11 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SectionRoute = SectionRouteImport.update({
+  id: '/section',
+  path: '/section',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SplashRoute = SplashRouteImport.update({
   id: '/splash',
   path: '/splash',
@@ -43,39 +67,83 @@ const SplashRoute = SplashRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/course': typeof CourseRoute
+  '/lesson': typeof LessonRoute
+  '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/register': typeof RegisterRoute
+  '/section': typeof SectionRoute
   '/splash': typeof SplashRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/course': typeof CourseRoute
+  '/lesson': typeof LessonRoute
+  '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/register': typeof RegisterRoute
+  '/section': typeof SectionRoute
   '/splash': typeof SplashRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/course': typeof CourseRoute
+  '/lesson': typeof LessonRoute
+  '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/register': typeof RegisterRoute
+  '/section': typeof SectionRoute
   '/splash': typeof SplashRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/onboarding' | '/register' | '/splash'
+  fullPaths:
+    | '/'
+    | '/course'
+    | '/lesson'
+    | '/lesson-video'
+    | '/login'
+    | '/onboarding'
+    | '/register'
+    | '/section'
+    | '/splash'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/onboarding' | '/register' | '/splash'
-  id: '__root__' | '/' | '/login' | '/onboarding' | '/register' | '/splash'
+  to:
+    | '/'
+    | '/course'
+    | '/lesson'
+    | '/lesson-video'
+    | '/login'
+    | '/onboarding'
+    | '/register'
+    | '/section'
+    | '/splash'
+  id:
+    | '__root__'
+    | '/'
+    | '/course'
+    | '/lesson'
+    | '/lesson-video'
+    | '/login'
+    | '/onboarding'
+    | '/register'
+    | '/section'
+    | '/splash'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CourseRoute: typeof CourseRoute
+  LessonRoute: typeof LessonRoute
+  LessonVideoRoute: typeof LessonVideoRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
   RegisterRoute: typeof RegisterRoute
+  SectionRoute: typeof SectionRoute
   SplashRoute: typeof SplashRoute
 }
 
@@ -86,6 +154,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/course': {
+      id: '/course'
+      path: '/course'
+      fullPath: '/course'
+      preLoaderRoute: typeof CourseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lesson': {
+      id: '/lesson'
+      path: '/lesson'
+      fullPath: '/lesson'
+      preLoaderRoute: typeof LessonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lesson-video': {
+      id: '/lesson-video'
+      path: '/lesson-video'
+      fullPath: '/lesson-video'
+      preLoaderRoute: typeof LessonVideoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -109,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/section': {
+      id: '/section'
+      path: '/section'
+      fullPath: '/section'
+      preLoaderRoute: typeof SectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/splash': {
       id: '/splash'
       path: '/splash'
@@ -121,9 +217,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CourseRoute: CourseRoute,
+  LessonRoute: LessonRoute,
+  LessonVideoRoute: LessonVideoRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   RegisterRoute: RegisterRoute,
+  SectionRoute: SectionRoute,
   SplashRoute: SplashRoute,
 }
 export const routeTree = rootRouteImport
