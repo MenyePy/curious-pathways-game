@@ -4,6 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Baloo 2", "Trebuchet MS", sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
+}
+
 /*
  * Design system definition.
  *
