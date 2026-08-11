@@ -42,7 +42,7 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/daily-goal", label: "Daily goal", emoji: "🎯" },
       { to: "/streak", label: "Streak", emoji: "🔥" },
       { to: "/badges", label: "Badges", emoji: "🎖️" },
-      { to: "/rewards", label: "Points / rewards", emoji: "💎" },
+      { to: "/shop", label: "Shop", emoji: "💎" },
       { to: "/events", label: "Events", emoji: "🎪" },
     ],
   },

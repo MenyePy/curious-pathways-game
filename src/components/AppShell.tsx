@@ -27,7 +27,7 @@ const secondaryNav = [
   { to: "/daily-goal", label: "Daily goal", icon: Target },
   { to: "/streak", label: "Streak", icon: Flame },
   { to: "/badges", label: "Badges", icon: Medal },
-  { to: "/rewards", label: "Rewards", icon: Gem },
+  { to: "/shop", label: "Shop", icon: ShoppingBag },
   { to: "/events", label: "Events", icon: CalendarDays },
   { to: "/settings", label: "Settings", icon: Settings },
   { to: "/admin", label: "Admin", icon: Shield },

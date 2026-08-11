@@ -5,9 +5,9 @@ import { Panel, Chip, PlayButton, ScreenTitle } from "@/components/kit";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Points & rewards — Hivision Academy" },
+      { title: "Shop — Hivision Academy" },
       { name: "description", content: "Spend gems on streak freezes, avatar outfits and power-ups." },
-      { property: "og:title", content: "Points & rewards — Hivision Academy" },
+      { property: "og:title", content: "Shop — Hivision Academy" },
       { property: "og:description", content: "Spend gems on freezes, outfits and power-ups." },
     ],
   }),
@@ -23,7 +23,7 @@ const shop = [
 
 function ShopPage() {
   return (
-    <AppShell title="Rewards">
+    <AppShell title="Shop">
       <div className="mx-auto max-w-xl space-y-5">
         <ScreenTitle title="Gem shop" subtitle="Earn gems by finishing lessons and quizzes." />
 

@@ -24,10 +24,10 @@ import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
 import { Route as RegisterRouteImport } from './routes/register'
-import { Route as RewardsRouteImport } from './routes/rewards'
 import { Route as ScreensRouteImport } from './routes/screens'
 import { Route as SectionRouteImport } from './routes/section'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SplashRouteImport } from './routes/splash'
 import { Route as StreakRouteImport } from './routes/streak'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
@@ -108,11 +108,6 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RewardsRoute = RewardsRouteImport.update({
-  id: '/rewards',
-  path: '/rewards',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ScreensRoute = ScreensRouteImport.update({
   id: '/screens',
   path: '/screens',
@@ -126,6 +121,11 @@ const SectionRoute = SectionRouteImport.update({
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SplashRoute = SplashRouteImport.update({
@@ -165,10 +165,10 @@ export interface FileRoutesByFullPath {
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
-  '/rewards': typeof RewardsRoute
   '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
   '/admin/editor': typeof AdminEditorRoute
@@ -190,10 +190,10 @@ export interface FileRoutesByTo {
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
-  '/rewards': typeof RewardsRoute
   '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
   '/admin/editor': typeof AdminEditorRoute
@@ -216,10 +216,10 @@ export interface FileRoutesById {
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
-  '/rewards': typeof RewardsRoute
   '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
   '/admin/editor': typeof AdminEditorRoute
@@ -243,10 +243,10 @@ export interface FileRouteTypes {
     | '/quiz'
     | '/quiz-result'
     | '/register'
-    | '/rewards'
     | '/screens'
     | '/section'
     | '/settings'
+    | '/shop'
     | '/splash'
     | '/streak'
     | '/admin/editor'
@@ -268,10 +268,10 @@ export interface FileRouteTypes {
     | '/quiz'
     | '/quiz-result'
     | '/register'
-    | '/rewards'
     | '/screens'
     | '/section'
     | '/settings'
+    | '/shop'
     | '/splash'
     | '/streak'
     | '/admin/editor'
@@ -293,10 +293,10 @@ export interface FileRouteTypes {
     | '/quiz'
     | '/quiz-result'
     | '/register'
-    | '/rewards'
     | '/screens'
     | '/section'
     | '/settings'
+    | '/shop'
     | '/splash'
     | '/streak'
     | '/admin/editor'
@@ -319,10 +319,10 @@ export interface RootRouteChildren {
   QuizRoute: typeof QuizRoute
   QuizResultRoute: typeof QuizResultRoute
   RegisterRoute: typeof RegisterRoute
-  RewardsRoute: typeof RewardsRoute
   ScreensRoute: typeof ScreensRoute
   SectionRoute: typeof SectionRoute
   SettingsRoute: typeof SettingsRoute
+  ShopRoute: typeof ShopRoute
   SplashRoute: typeof SplashRoute
   StreakRoute: typeof StreakRoute
   AdminEditorRoute: typeof AdminEditorRoute
@@ -436,13 +436,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/rewards': {
-      id: '/rewards'
-      path: '/rewards'
-      fullPath: '/rewards'
-      preLoaderRoute: typeof RewardsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/screens': {
       id: '/screens'
       path: '/screens'
@@ -462,6 +455,13 @@ declare module '@tanstack/react-router' {
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/splash': {
@@ -511,10 +511,10 @@ const rootRouteChildren: RootRouteChildren = {
   QuizRoute: QuizRoute,
   QuizResultRoute: QuizResultRoute,
   RegisterRoute: RegisterRoute,
-  RewardsRoute: RewardsRoute,
   ScreensRoute: ScreensRoute,
   SectionRoute: SectionRoute,
   SettingsRoute: SettingsRoute,
+  ShopRoute: ShopRoute,
   SplashRoute: SplashRoute,
   StreakRoute: StreakRoute,
   AdminEditorRoute: AdminEditorRoute,
@@ -523,3 +523,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
