@@ -3,6 +3,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { AvatarSpeech } from "@/components/AvatarSpeech";
 import { PlayButton, ProgressBar, Chip } from "@/components/kit";
+import { playSound } from "@/lib/sound";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/quiz")({
@@ -45,7 +46,11 @@ function QuizPage() {
             return (
               <button
                 key={o}
-                onClick={() => setPicked(o)}
+                onClick={() => {
+                  if (checked) return;
+                  setPicked(o);
+                  playSound(o === correct ? "correct" : "wrong");
+                }}
                 className={cn(
                   "chunky rounded-2xl border-2 bg-card px-5 py-4 text-left font-display font-bold",
                   state === "idle" && "border-border",
