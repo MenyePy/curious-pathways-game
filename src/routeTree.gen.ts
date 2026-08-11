@@ -32,6 +32,7 @@ import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SplashRouteImport } from './routes/splash'
 import { Route as StreakRouteImport } from './routes/streak'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminEditorRouteImport } from './routes/admin/editor'
 
@@ -150,6 +151,11 @@ const StreakRoute = StreakRouteImport.update({
   path: '/streak',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
@@ -185,6 +191,7 @@ export interface FileRoutesByFullPath {
   '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/terms': typeof TermsRoute
   '/admin/editor': typeof AdminEditorRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -212,6 +219,7 @@ export interface FileRoutesByTo {
   '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/terms': typeof TermsRoute
   '/admin/editor': typeof AdminEditorRoute
   '/admin': typeof AdminIndexRoute
 }
@@ -240,6 +248,7 @@ export interface FileRoutesById {
   '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/terms': typeof TermsRoute
   '/admin/editor': typeof AdminEditorRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -269,6 +278,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/splash'
     | '/streak'
+    | '/terms'
     | '/admin/editor'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
@@ -296,6 +306,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/splash'
     | '/streak'
+    | '/terms'
     | '/admin/editor'
     | '/admin'
   id:
@@ -323,6 +334,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/splash'
     | '/streak'
+    | '/terms'
     | '/admin/editor'
     | '/admin/'
   fileRoutesById: FileRoutesById
@@ -351,6 +363,7 @@ export interface RootRouteChildren {
   ShopRoute: typeof ShopRoute
   SplashRoute: typeof SplashRoute
   StreakRoute: typeof StreakRoute
+  TermsRoute: typeof TermsRoute
   AdminEditorRoute: typeof AdminEditorRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
@@ -518,6 +531,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StreakRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/': {
       id: '/admin/'
       path: '/admin'
@@ -559,6 +579,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShopRoute: ShopRoute,
   SplashRoute: SplashRoute,
   StreakRoute: StreakRoute,
+  TermsRoute: TermsRoute,
   AdminEditorRoute: AdminEditorRoute,
   AdminIndexRoute: AdminIndexRoute,
 }
