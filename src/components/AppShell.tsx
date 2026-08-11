@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Home,
   Trophy,
@@ -13,7 +13,14 @@ import {
   Settings,
   Shield,
   Sparkles,
+  ShoppingBag,
+  Menu,
+  Bell,
+  CreditCard,
+  Info,
+  FileText,
 } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const primaryNav = [
@@ -29,10 +36,30 @@ const secondaryNav = [
   { to: "/badges", label: "Badges", icon: Medal },
   { to: "/shop", label: "Shop", icon: ShoppingBag },
   { to: "/events", label: "Events", icon: CalendarDays },
+  { to: "/notifications", label: "Notifications", icon: Bell },
+  { to: "/plans", label: "Plans", icon: CreditCard },
+  { to: "/info", label: "Info & contact", icon: Info },
+  { to: "/terms", label: "Terms", icon: FileText },
   { to: "/settings", label: "Settings", icon: Settings },
   { to: "/admin", label: "Admin", icon: Shield },
   { to: "/screens", label: "Screen index", icon: Sparkles },
 ];
+
+const allNav = primaryNav.concat(secondaryNav);
+
+const navLinkClass =
+  "flex items-center gap-3 rounded-2xl px-3 py-2.5 font-display text-sm font-bold text-muted-foreground transition-colors hover:bg-muted data-[status=active]:bg-primary/12 data-[status=active]:text-primary-deep";
+
+function BrandMark() {
+  return (
+    <Link to="/" className="mb-6 flex items-center gap-2 px-2">
+      <span className="grid h-10 w-10 place-items-center rounded-2xl text-xl [background:var(--gradient-hero)]">
+        🚀
+      </span>
+      <span className="font-display text-lg font-extrabold">Hivision Academy</span>
+    </Link>
+  );
+}
 
 export function StatBar() {
   return (
@@ -56,39 +83,74 @@ export function AppShell({
   title?: string;
   showStats?: boolean;
 }) {
+  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen w-full bg-background">
       <div className="mx-auto flex w-full max-w-6xl">
         {/* Desktop sidebar */}
         <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col gap-1 border-r-2 border-border bg-card px-4 py-6 lg:flex">
-          <Link to="/" className="mb-6 flex items-center gap-2 px-2">
-            <span className="grid h-10 w-10 place-items-center rounded-2xl text-xl [background:var(--gradient-hero)]">
-              🚀
-            </span>
-            <span className="font-display text-xl font-extrabold">Hivision Academy</span>
-          </Link>
-          {primaryNav.concat(secondaryNav).map((item) => (
+          <BrandMark />
+          <div className="min-h-0 flex-1 overflow-y-auto">
+          {allNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              className="flex items-center gap-3 rounded-2xl px-3 py-2.5 font-display text-sm font-bold text-muted-foreground transition-colors hover:bg-muted data-[status=active]:bg-primary/12 data-[status=active]:text-primary-deep"
+              className={navLinkClass}
             >
               <item.icon className="h-5 w-5 shrink-0" />
               <span className="truncate">{item.label}</span>
             </Link>
           ))}
+          </div>
         </aside>
 
         <div className="min-w-0 flex-1">
           {/* Mobile top bar */}
           <header
             className={cn(
-              "sticky top-0 z-20 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b-2 border-border bg-card/95 px-4 py-3 backdrop-blur",
+              "sticky top-0 z-20 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-b-2 border-border bg-card/95 px-4 py-3 backdrop-blur lg:grid-cols-[minmax(0,1fr)_auto]",
             )}
           >
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger
+                aria-label="Open menu"
+                className="grid h-10 w-10 place-items-center rounded-2xl border-2 border-border bg-card lg:hidden"
+              >
+                <Menu className="h-5 w-5" />
+              </SheetTrigger>
+              <SheetContent side="left" className="w-72 overflow-y-auto bg-card px-4 py-6">
+                <BrandMark />
+                <nav className="flex flex-col gap-1">
+                  {allNav.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      activeOptions={{ exact: item.to === "/" }}
+                      onClick={() => setOpen(false)}
+                      className={navLinkClass}
+                    >
+                      <item.icon className="h-5 w-5 shrink-0" />
+                      <span className="truncate">{item.label}</span>
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
             <h2 className="truncate font-display text-lg font-extrabold">{title ?? "Hivision Academy"}</h2>
-            {showStats ? <StatBar /> : null}
+            <div className="flex items-center gap-2">
+              {showStats ? <StatBar /> : null}
+              <Link
+                to="/notifications"
+                aria-label="Notifications"
+                className="relative grid h-10 w-10 place-items-center rounded-2xl border-2 border-border bg-card"
+              >
+                <Bell className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 grid h-5 w-5 place-items-center rounded-full bg-destructive font-display text-[10px] font-extrabold text-destructive-foreground">
+                  3
+                </span>
+              </Link>
+            </div>
           </header>
 
           <main className="px-4 pt-5 pb-28 sm:px-6 lg:pb-10">{children}</main>
