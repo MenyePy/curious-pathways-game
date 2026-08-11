@@ -19,6 +19,7 @@ import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LessonRouteImport } from './routes/lesson'
 import { Route as LessonVideoRouteImport } from './routes/lesson-video'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PlansRouteImport } from './routes/plans'
 import { Route as ProfileRouteImport } from './routes/profile'
@@ -82,6 +83,11 @@ const LessonVideoRoute = LessonVideoRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -166,6 +172,7 @@ export interface FileRoutesByFullPath {
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/plans': typeof PlansRoute
   '/profile': typeof ProfileRoute
@@ -192,6 +199,7 @@ export interface FileRoutesByTo {
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/plans': typeof PlansRoute
   '/profile': typeof ProfileRoute
@@ -219,6 +227,7 @@ export interface FileRoutesById {
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/plans': typeof PlansRoute
   '/profile': typeof ProfileRoute
@@ -247,6 +256,7 @@ export interface FileRouteTypes {
     | '/lesson'
     | '/lesson-video'
     | '/login'
+    | '/notifications'
     | '/onboarding'
     | '/plans'
     | '/profile'
@@ -273,6 +283,7 @@ export interface FileRouteTypes {
     | '/lesson'
     | '/lesson-video'
     | '/login'
+    | '/notifications'
     | '/onboarding'
     | '/plans'
     | '/profile'
@@ -299,6 +310,7 @@ export interface FileRouteTypes {
     | '/lesson'
     | '/lesson-video'
     | '/login'
+    | '/notifications'
     | '/onboarding'
     | '/plans'
     | '/profile'
@@ -326,6 +338,7 @@ export interface RootRouteChildren {
   LessonRoute: typeof LessonRoute
   LessonVideoRoute: typeof LessonVideoRoute
   LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
   OnboardingRoute: typeof OnboardingRoute
   PlansRoute: typeof PlansRoute
   ProfileRoute: typeof ProfileRoute
@@ -412,6 +425,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -526,6 +546,7 @@ const rootRouteChildren: RootRouteChildren = {
   LessonRoute: LessonRoute,
   LessonVideoRoute: LessonVideoRoute,
   LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
   OnboardingRoute: OnboardingRoute,
   PlansRoute: PlansRoute,
   ProfileRoute: ProfileRoute,
