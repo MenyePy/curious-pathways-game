@@ -78,7 +78,7 @@ function ScreensPage() {
   return (
     <AppShell title="Screen index" showStats={false}>
       <div className="mx-auto max-w-3xl space-y-6">
-        <ScreenTitle title="Design templates" subtitle="21 screens sharing one component and token system." />
+        <ScreenTitle title="Design templates" subtitle="28 screens sharing one component and token system." />
         {groups.map((g) => (
           <section key={g.name} className="space-y-3">
             <Chip tone="primary">{g.name}</Chip>
