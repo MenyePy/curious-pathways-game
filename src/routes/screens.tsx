@@ -22,6 +22,7 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/onboarding", label: "Onboarding", emoji: "🧭" },
       { to: "/login", label: "Login", emoji: "🔑" },
       { to: "/register", label: "Register", emoji: "🆕" },
+      { to: "/info", label: "Info & contact", emoji: "📇" },
     ],
   },
   {
@@ -44,6 +45,7 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/badges", label: "Badges", emoji: "🎖️" },
       { to: "/shop", label: "Shop", emoji: "💎" },
       { to: "/events", label: "Events", emoji: "🎪" },
+      { to: "/notifications", label: "Notifications", emoji: "🔔" },
     ],
   },
   {
@@ -53,6 +55,14 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/friends", label: "Friends", emoji: "👥" },
       { to: "/leaderboard", label: "Leaderboard", emoji: "🏆" },
       { to: "/settings", label: "Settings", emoji: "⚙️" },
+    ],
+  },
+  {
+    name: "Commerce & legal",
+    items: [
+      { to: "/plans", label: "Payment plans", emoji: "💳" },
+      { to: "/terms", label: "Terms & conditions", emoji: "📜" },
+      { to: "/privacy", label: "Privacy policy", emoji: "🔒" },
     ],
   },
   {
