@@ -20,6 +20,7 @@ import { Route as LessonRouteImport } from './routes/lesson'
 import { Route as LessonVideoRouteImport } from './routes/lesson-video'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PlansRouteImport } from './routes/plans'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
@@ -86,6 +87,11 @@ const LoginRoute = LoginRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlansRoute = PlansRouteImport.update({
+  id: '/plans',
+  path: '/plans',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -161,6 +167,7 @@ export interface FileRoutesByFullPath {
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/plans': typeof PlansRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
@@ -186,6 +193,7 @@ export interface FileRoutesByTo {
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/plans': typeof PlansRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
@@ -212,6 +220,7 @@ export interface FileRoutesById {
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
+  '/plans': typeof PlansRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
@@ -239,6 +248,7 @@ export interface FileRouteTypes {
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/plans'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
@@ -264,6 +274,7 @@ export interface FileRouteTypes {
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/plans'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
@@ -289,6 +300,7 @@ export interface FileRouteTypes {
     | '/lesson-video'
     | '/login'
     | '/onboarding'
+    | '/plans'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
@@ -315,6 +327,7 @@ export interface RootRouteChildren {
   LessonVideoRoute: typeof LessonVideoRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
+  PlansRoute: typeof PlansRoute
   ProfileRoute: typeof ProfileRoute
   QuizRoute: typeof QuizRoute
   QuizResultRoute: typeof QuizResultRoute
@@ -406,6 +419,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plans': {
+      id: '/plans'
+      path: '/plans'
+      fullPath: '/plans'
+      preLoaderRoute: typeof PlansRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -507,6 +527,7 @@ const rootRouteChildren: RootRouteChildren = {
   LessonVideoRoute: LessonVideoRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
+  PlansRoute: PlansRoute,
   ProfileRoute: ProfileRoute,
   QuizRoute: QuizRoute,
   QuizResultRoute: QuizResultRoute,
