@@ -15,6 +15,7 @@ import { Route as CourseRouteImport } from './routes/course'
 import { Route as DailyGoalRouteImport } from './routes/daily-goal'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as FriendsRouteImport } from './routes/friends'
+import { Route as InfoRouteImport } from './routes/info'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LessonRouteImport } from './routes/lesson'
 import { Route as LessonVideoRouteImport } from './routes/lesson-video'
@@ -65,6 +66,11 @@ const EventsRoute = EventsRouteImport.update({
 const FriendsRoute = FriendsRouteImport.update({
   id: '/friends',
   path: '/friends',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfoRoute = InfoRouteImport.update({
+  id: '/info',
+  path: '/info',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeaderboardRoute = LeaderboardRouteImport.update({
@@ -180,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/daily-goal': typeof DailyGoalRoute
   '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
+  '/info': typeof InfoRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
@@ -209,6 +216,7 @@ export interface FileRoutesByTo {
   '/daily-goal': typeof DailyGoalRoute
   '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
+  '/info': typeof InfoRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
@@ -239,6 +247,7 @@ export interface FileRoutesById {
   '/daily-goal': typeof DailyGoalRoute
   '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
+  '/info': typeof InfoRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
@@ -270,6 +279,7 @@ export interface FileRouteTypes {
     | '/daily-goal'
     | '/events'
     | '/friends'
+    | '/info'
     | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
@@ -299,6 +309,7 @@ export interface FileRouteTypes {
     | '/daily-goal'
     | '/events'
     | '/friends'
+    | '/info'
     | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
@@ -328,6 +339,7 @@ export interface FileRouteTypes {
     | '/daily-goal'
     | '/events'
     | '/friends'
+    | '/info'
     | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
@@ -358,6 +370,7 @@ export interface RootRouteChildren {
   DailyGoalRoute: typeof DailyGoalRoute
   EventsRoute: typeof EventsRoute
   FriendsRoute: typeof FriendsRoute
+  InfoRoute: typeof InfoRoute
   LeaderboardRoute: typeof LeaderboardRoute
   LessonRoute: typeof LessonRoute
   LessonVideoRoute: typeof LessonVideoRoute
@@ -423,6 +436,13 @@ declare module '@tanstack/react-router' {
       path: '/friends'
       fullPath: '/friends'
       preLoaderRoute: typeof FriendsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/info': {
+      id: '/info'
+      path: '/info'
+      fullPath: '/info'
+      preLoaderRoute: typeof InfoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leaderboard': {
@@ -582,6 +602,7 @@ const rootRouteChildren: RootRouteChildren = {
   DailyGoalRoute: DailyGoalRoute,
   EventsRoute: EventsRoute,
   FriendsRoute: FriendsRoute,
+  InfoRoute: InfoRoute,
   LeaderboardRoute: LeaderboardRoute,
   LessonRoute: LessonRoute,
   LessonVideoRoute: LessonVideoRoute,

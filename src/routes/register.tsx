@@ -27,6 +27,17 @@ function RegisterPage() {
           <Link to="/login" className="font-bold text-primary-deep underline">
             Log in
           </Link>
+          <span className="mt-3 block">
+            Need access or pricing?{" "}
+            <Link to="/info" className="font-bold text-primary-deep underline">
+              Contact us & see plans
+            </Link>
+          </span>
+          <span className="mt-2 block">
+            By signing up you agree to our{" "}
+            <Link to="/terms" className="underline">Terms</Link> and{" "}
+            <Link to="/privacy" className="underline">Privacy Policy</Link>.
+          </span>
         </>
       }
     >
