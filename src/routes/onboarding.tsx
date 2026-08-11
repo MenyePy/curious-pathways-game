@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/onboarding")({
   head: () => ({
     meta: [
-      { title: "Get started — Questly" },
+      { title: "Get started — Hivision Academy" },
       { name: "description", content: "Pick your goal, meet your guide and start your first quest." },
-      { property: "og:title", content: "Get started — Questly" },
+      { property: "og:title", content: "Get started — Hivision Academy" },
       { property: "og:description", content: "Pick your goal, meet your guide and start your first quest." },
     ],
   }),

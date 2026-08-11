@@ -5,10 +5,10 @@ import { Panel, ScreenTitle, Chip } from "@/components/kit";
 export const Route = createFileRoute("/screens")({
   head: () => ({
     meta: [
-      { title: "Screen index — Questly design system" },
-      { name: "description", content: "Every design template in the Questly system: onboarding, lessons, quizzes, social and admin." },
-      { property: "og:title", content: "Screen index — Questly design system" },
-      { property: "og:description", content: "Every design template in the Questly system." },
+      { title: "Screen index — Hivision Academy design system" },
+      { name: "description", content: "Every design template in the Hivision Academy system: onboarding, lessons, quizzes, social and admin." },
+      { property: "og:title", content: "Screen index — Hivision Academy design system" },
+      { property: "og:description", content: "Every design template in the Hivision Academy system." },
     ],
   }),
   component: ScreensPage,

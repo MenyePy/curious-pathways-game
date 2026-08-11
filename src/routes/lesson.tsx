@@ -6,9 +6,9 @@ import { Panel, PlayButton, ProgressBar, Chip } from "@/components/kit";
 export const Route = createFileRoute("/lesson")({
   head: () => ({
     meta: [
-      { title: "Lesson: Place value — Questly" },
+      { title: "Lesson: Place value — Hivision Academy" },
       { name: "description", content: "A short, guided lesson step with worked examples and your guide avatar." },
-      { property: "og:title", content: "Lesson: Place value — Questly" },
+      { property: "og:title", content: "Lesson: Place value — Hivision Academy" },
       { property: "og:description", content: "A short, guided lesson step with worked examples." },
     ],
   }),

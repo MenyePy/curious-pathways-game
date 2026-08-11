@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/quiz")({
   head: () => ({
     meta: [
-      { title: "Quiz — Questly" },
+      { title: "Quiz — Hivision Academy" },
       { name: "description", content: "Answer quick questions and get instant feedback from your guide avatar." },
-      { property: "og:title", content: "Quiz — Questly" },
+      { property: "og:title", content: "Quiz — Hivision Academy" },
       { property: "og:description", content: "Quick questions with instant avatar feedback." },
     ],
   }),

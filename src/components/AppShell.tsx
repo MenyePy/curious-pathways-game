@@ -65,7 +65,7 @@ export function AppShell({
             <span className="grid h-10 w-10 place-items-center rounded-2xl text-xl [background:var(--gradient-hero)]">
               🚀
             </span>
-            <span className="font-display text-xl font-extrabold">Questly</span>
+            <span className="font-display text-xl font-extrabold">Hivision Academy</span>
           </Link>
           {primaryNav.concat(secondaryNav).map((item) => (
             <Link
@@ -87,7 +87,7 @@ export function AppShell({
               "sticky top-0 z-20 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b-2 border-border bg-card/95 px-4 py-3 backdrop-blur",
             )}
           >
-            <h2 className="truncate font-display text-lg font-extrabold">{title ?? "Questly"}</h2>
+            <h2 className="truncate font-display text-lg font-extrabold">{title ?? "Hivision Academy"}</h2>
             {showStats ? <StatBar /> : null}
           </header>
 

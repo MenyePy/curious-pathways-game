@@ -6,9 +6,9 @@ import { Panel, PlayButton, ProgressBar, Chip, ScreenTitle } from "@/components/
 export const Route = createFileRoute("/daily-goal")({
   head: () => ({
     meta: [
-      { title: "Daily goal — Questly" },
+      { title: "Daily goal — Hivision Academy" },
       { name: "description", content: "Set a daily learning goal you can keep and track today's progress." },
-      { property: "og:title", content: "Daily goal — Questly" },
+      { property: "og:title", content: "Daily goal — Hivision Academy" },
       { property: "og:description", content: "Set a daily goal and track today's progress." },
     ],
   }),

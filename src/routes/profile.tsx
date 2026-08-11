@@ -6,9 +6,9 @@ import { badges } from "@/data/curriculum";
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Your profile — Questly" },
+      { title: "Your profile — Hivision Academy" },
       { name: "description", content: "Your level, gems, streak, badges and learning stats in one place." },
-      { property: "og:title", content: "Your profile — Questly" },
+      { property: "og:title", content: "Your profile — Hivision Academy" },
       { property: "og:description", content: "Level, gems, streak, badges and learning stats." },
     ],
   }),

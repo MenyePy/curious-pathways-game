@@ -6,9 +6,9 @@ import { characters } from "@/data/avatars";
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Create your account — Questly" },
-      { name: "description", content: "Create a Questly profile, choose your guide and start learning." },
-      { property: "og:title", content: "Create your account — Questly" },
+      { title: "Create your account — Hivision Academy" },
+      { name: "description", content: "Create a Hivision Academy profile, choose your guide and start learning." },
+      { property: "og:title", content: "Create your account — Hivision Academy" },
       { property: "og:description", content: "Create a profile, choose your guide and start learning." },
     ],
   }),

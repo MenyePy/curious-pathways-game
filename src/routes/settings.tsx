@@ -6,9 +6,9 @@ import { characters } from "@/data/avatars";
 export const Route = createFileRoute("/settings")({
   head: () => ({
     meta: [
-      { title: "Settings — Questly" },
+      { title: "Settings — Hivision Academy" },
       { name: "description", content: "Manage notifications, sound, accessibility and your guide avatar." },
-      { property: "og:title", content: "Settings — Questly" },
+      { property: "og:title", content: "Settings — Hivision Academy" },
       { property: "og:description", content: "Notifications, sound, accessibility and avatar options." },
     ],
   }),

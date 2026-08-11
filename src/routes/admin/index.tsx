@@ -5,9 +5,9 @@ import { Panel, Chip, ProgressBar, PlayButton, ScreenTitle } from "@/components/
 export const Route = createFileRoute("/admin/")({
   head: () => ({
     meta: [
-      { title: "Admin dashboard — Questly" },
+      { title: "Admin dashboard — Hivision Academy" },
       { name: "description", content: "Overview of learners, content health and engagement for course admins." },
-      { property: "og:title", content: "Admin dashboard — Questly" },
+      { property: "og:title", content: "Admin dashboard — Hivision Academy" },
       { property: "og:description", content: "Learners, content health and engagement at a glance." },
     ],
   }),

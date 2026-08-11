@@ -7,9 +7,9 @@ import { Panel, Chip, PlayButton, ScreenTitle } from "@/components/kit";
 export const Route = createFileRoute("/friends")({
   head: () => ({
     meta: [
-      { title: "Friends — Questly" },
+      { title: "Friends — Hivision Academy" },
       { name: "description", content: "Follow friends, compare streaks and cheer each other on." },
-      { property: "og:title", content: "Friends — Questly" },
+      { property: "og:title", content: "Friends — Hivision Academy" },
       { property: "og:description", content: "Follow friends, compare streaks and cheer each other on." },
     ],
   }),

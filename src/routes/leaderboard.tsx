@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/leaderboard")({
   head: () => ({
     meta: [
-      { title: "Leaderboard — Questly" },
+      { title: "Leaderboard — Hivision Academy" },
       { name: "description", content: "Weekly league standings — climb the ranks and reach the next league." },
-      { property: "og:title", content: "Leaderboard — Questly" },
+      { property: "og:title", content: "Leaderboard — Hivision Academy" },
       { property: "og:description", content: "Weekly league standings — climb the ranks." },
     ],
   }),

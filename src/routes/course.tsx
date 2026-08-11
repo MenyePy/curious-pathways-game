@@ -6,9 +6,9 @@ import { sections } from "@/data/curriculum";
 export const Route = createFileRoute("/course")({
   head: () => ({
     meta: [
-      { title: "Course map — Questly" },
+      { title: "Course map — Hivision Academy" },
       { name: "description", content: "See every section of the course and track how far you've travelled." },
-      { property: "og:title", content: "Course map — Questly" },
+      { property: "og:title", content: "Course map — Hivision Academy" },
       { property: "og:description", content: "See every section and track your progress." },
     ],
   }),

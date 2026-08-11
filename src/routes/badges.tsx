@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/badges")({
   head: () => ({
     meta: [
-      { title: "Badges — Questly" },
+      { title: "Badges — Hivision Academy" },
       { name: "description", content: "Collect badges for streaks, perfect quizzes and learning milestones." },
-      { property: "og:title", content: "Badges — Questly" },
+      { property: "og:title", content: "Badges — Hivision Academy" },
       { property: "og:description", content: "Collect badges for streaks, quizzes and milestones." },
     ],
   }),
