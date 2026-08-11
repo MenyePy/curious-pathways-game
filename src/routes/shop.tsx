@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { Panel, Chip, PlayButton, ScreenTitle } from "@/components/kit";
 
-export const Route = createFileRoute("/rewards")({
+export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Points & rewards — Questly" },
+      { title: "Shop — Hivision Academy" },
       { name: "description", content: "Spend gems on streak freezes, avatar outfits and power-ups." },
-      { property: "og:title", content: "Points & rewards — Questly" },
+      { property: "og:title", content: "Shop — Hivision Academy" },
       { property: "og:description", content: "Spend gems on freezes, outfits and power-ups." },
     ],
   }),
-  component: RewardsPage,
+  component: ShopPage,
 });
 
 const shop = [
@@ -21,9 +21,9 @@ const shop = [
   { name: "Guide outfit", emoji: "🎩", cost: 500, desc: "Dress up your avatar companion" },
 ];
 
-function RewardsPage() {
+function ShopPage() {
   return (
-    <AppShell title="Rewards">
+    <AppShell title="Shop">
       <div className="mx-auto max-w-xl space-y-5">
         <ScreenTitle title="Gem shop" subtitle="Earn gems by finishing lessons and quizzes." />
 

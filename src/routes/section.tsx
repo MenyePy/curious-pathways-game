@@ -8,9 +8,9 @@ import { sections } from "@/data/curriculum";
 export const Route = createFileRoute("/section")({
   head: () => ({
     meta: [
-      { title: "Section 1: Number Basics — Questly" },
+      { title: "Section 1: Number Basics — Hivision Academy" },
       { name: "description", content: "Work through the Number Basics section: lessons, videos, quiz and a boss level." },
-      { property: "og:title", content: "Section 1: Number Basics — Questly" },
+      { property: "og:title", content: "Section 1: Number Basics — Hivision Academy" },
       { property: "og:description", content: "Lessons, videos, a quiz and a boss level." },
     ],
   }),

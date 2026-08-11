@@ -15,21 +15,26 @@ import { Route as CourseRouteImport } from './routes/course'
 import { Route as DailyGoalRouteImport } from './routes/daily-goal'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as FriendsRouteImport } from './routes/friends'
+import { Route as InfoRouteImport } from './routes/info'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as LessonRouteImport } from './routes/lesson'
 import { Route as LessonVideoRouteImport } from './routes/lesson-video'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PlansRouteImport } from './routes/plans'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
 import { Route as RegisterRouteImport } from './routes/register'
-import { Route as RewardsRouteImport } from './routes/rewards'
 import { Route as ScreensRouteImport } from './routes/screens'
 import { Route as SectionRouteImport } from './routes/section'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SplashRouteImport } from './routes/splash'
 import { Route as StreakRouteImport } from './routes/streak'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminEditorRouteImport } from './routes/admin/editor'
 
@@ -63,6 +68,11 @@ const FriendsRoute = FriendsRouteImport.update({
   path: '/friends',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InfoRoute = InfoRouteImport.update({
+  id: '/info',
+  path: '/info',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeaderboardRoute = LeaderboardRouteImport.update({
   id: '/leaderboard',
   path: '/leaderboard',
@@ -83,9 +93,24 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlansRoute = PlansRouteImport.update({
+  id: '/plans',
+  path: '/plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -108,11 +133,6 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RewardsRoute = RewardsRouteImport.update({
-  id: '/rewards',
-  path: '/rewards',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ScreensRoute = ScreensRouteImport.update({
   id: '/screens',
   path: '/screens',
@@ -128,6 +148,11 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SplashRoute = SplashRouteImport.update({
   id: '/splash',
   path: '/splash',
@@ -136,6 +161,11 @@ const SplashRoute = SplashRouteImport.update({
 const StreakRoute = StreakRouteImport.update({
   id: '/streak',
   path: '/streak',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -156,21 +186,26 @@ export interface FileRoutesByFullPath {
   '/daily-goal': typeof DailyGoalRoute
   '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
+  '/info': typeof InfoRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
+  '/plans': typeof PlansRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
-  '/rewards': typeof RewardsRoute
   '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/terms': typeof TermsRoute
   '/admin/editor': typeof AdminEditorRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -181,21 +216,26 @@ export interface FileRoutesByTo {
   '/daily-goal': typeof DailyGoalRoute
   '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
+  '/info': typeof InfoRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
+  '/plans': typeof PlansRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
-  '/rewards': typeof RewardsRoute
   '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/terms': typeof TermsRoute
   '/admin/editor': typeof AdminEditorRoute
   '/admin': typeof AdminIndexRoute
 }
@@ -207,21 +247,26 @@ export interface FileRoutesById {
   '/daily-goal': typeof DailyGoalRoute
   '/events': typeof EventsRoute
   '/friends': typeof FriendsRoute
+  '/info': typeof InfoRoute
   '/leaderboard': typeof LeaderboardRoute
   '/lesson': typeof LessonRoute
   '/lesson-video': typeof LessonVideoRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
+  '/plans': typeof PlansRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
   '/register': typeof RegisterRoute
-  '/rewards': typeof RewardsRoute
   '/screens': typeof ScreensRoute
   '/section': typeof SectionRoute
   '/settings': typeof SettingsRoute
+  '/shop': typeof ShopRoute
   '/splash': typeof SplashRoute
   '/streak': typeof StreakRoute
+  '/terms': typeof TermsRoute
   '/admin/editor': typeof AdminEditorRoute
   '/admin/': typeof AdminIndexRoute
 }
@@ -234,21 +279,26 @@ export interface FileRouteTypes {
     | '/daily-goal'
     | '/events'
     | '/friends'
+    | '/info'
     | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
     | '/login'
+    | '/notifications'
     | '/onboarding'
+    | '/plans'
+    | '/privacy'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
     | '/register'
-    | '/rewards'
     | '/screens'
     | '/section'
     | '/settings'
+    | '/shop'
     | '/splash'
     | '/streak'
+    | '/terms'
     | '/admin/editor'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
@@ -259,21 +309,26 @@ export interface FileRouteTypes {
     | '/daily-goal'
     | '/events'
     | '/friends'
+    | '/info'
     | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
     | '/login'
+    | '/notifications'
     | '/onboarding'
+    | '/plans'
+    | '/privacy'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
     | '/register'
-    | '/rewards'
     | '/screens'
     | '/section'
     | '/settings'
+    | '/shop'
     | '/splash'
     | '/streak'
+    | '/terms'
     | '/admin/editor'
     | '/admin'
   id:
@@ -284,21 +339,26 @@ export interface FileRouteTypes {
     | '/daily-goal'
     | '/events'
     | '/friends'
+    | '/info'
     | '/leaderboard'
     | '/lesson'
     | '/lesson-video'
     | '/login'
+    | '/notifications'
     | '/onboarding'
+    | '/plans'
+    | '/privacy'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
     | '/register'
-    | '/rewards'
     | '/screens'
     | '/section'
     | '/settings'
+    | '/shop'
     | '/splash'
     | '/streak'
+    | '/terms'
     | '/admin/editor'
     | '/admin/'
   fileRoutesById: FileRoutesById
@@ -310,21 +370,26 @@ export interface RootRouteChildren {
   DailyGoalRoute: typeof DailyGoalRoute
   EventsRoute: typeof EventsRoute
   FriendsRoute: typeof FriendsRoute
+  InfoRoute: typeof InfoRoute
   LeaderboardRoute: typeof LeaderboardRoute
   LessonRoute: typeof LessonRoute
   LessonVideoRoute: typeof LessonVideoRoute
   LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
   OnboardingRoute: typeof OnboardingRoute
+  PlansRoute: typeof PlansRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProfileRoute: typeof ProfileRoute
   QuizRoute: typeof QuizRoute
   QuizResultRoute: typeof QuizResultRoute
   RegisterRoute: typeof RegisterRoute
-  RewardsRoute: typeof RewardsRoute
   ScreensRoute: typeof ScreensRoute
   SectionRoute: typeof SectionRoute
   SettingsRoute: typeof SettingsRoute
+  ShopRoute: typeof ShopRoute
   SplashRoute: typeof SplashRoute
   StreakRoute: typeof StreakRoute
+  TermsRoute: typeof TermsRoute
   AdminEditorRoute: typeof AdminEditorRoute
   AdminIndexRoute: typeof AdminIndexRoute
 }
@@ -373,6 +438,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FriendsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info': {
+      id: '/info'
+      path: '/info'
+      fullPath: '/info'
+      preLoaderRoute: typeof InfoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leaderboard': {
       id: '/leaderboard'
       path: '/leaderboard'
@@ -401,11 +473,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plans': {
+      id: '/plans'
+      path: '/plans'
+      fullPath: '/plans'
+      preLoaderRoute: typeof PlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -436,13 +529,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/rewards': {
-      id: '/rewards'
-      path: '/rewards'
-      fullPath: '/rewards'
-      preLoaderRoute: typeof RewardsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/screens': {
       id: '/screens'
       path: '/screens'
@@ -464,6 +550,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/splash': {
       id: '/splash'
       path: '/splash'
@@ -476,6 +569,13 @@ declare module '@tanstack/react-router' {
       path: '/streak'
       fullPath: '/streak'
       preLoaderRoute: typeof StreakRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/': {
@@ -502,21 +602,26 @@ const rootRouteChildren: RootRouteChildren = {
   DailyGoalRoute: DailyGoalRoute,
   EventsRoute: EventsRoute,
   FriendsRoute: FriendsRoute,
+  InfoRoute: InfoRoute,
   LeaderboardRoute: LeaderboardRoute,
   LessonRoute: LessonRoute,
   LessonVideoRoute: LessonVideoRoute,
   LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
   OnboardingRoute: OnboardingRoute,
+  PlansRoute: PlansRoute,
+  PrivacyRoute: PrivacyRoute,
   ProfileRoute: ProfileRoute,
   QuizRoute: QuizRoute,
   QuizResultRoute: QuizResultRoute,
   RegisterRoute: RegisterRoute,
-  RewardsRoute: RewardsRoute,
   ScreensRoute: ScreensRoute,
   SectionRoute: SectionRoute,
   SettingsRoute: SettingsRoute,
+  ShopRoute: ShopRoute,
   SplashRoute: SplashRoute,
   StreakRoute: StreakRoute,
+  TermsRoute: TermsRoute,
   AdminEditorRoute: AdminEditorRoute,
   AdminIndexRoute: AdminIndexRoute,
 }

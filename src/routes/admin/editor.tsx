@@ -9,9 +9,9 @@ import { characters, type Expression } from "@/data/avatars";
 export const Route = createFileRoute("/admin/editor")({
   head: () => ({
     meta: [
-      { title: "Content editor — Questly Admin" },
+      { title: "Content editor — Hivision Academy Admin" },
       { name: "description", content: "Author lesson steps and configure avatar dialogue, expressions and characters." },
-      { property: "og:title", content: "Content editor — Questly Admin" },
+      { property: "og:title", content: "Content editor — Hivision Academy Admin" },
       { property: "og:description", content: "Author lesson steps and configure avatar dialogue." },
     ],
   }),

@@ -5,9 +5,9 @@ import { Panel, PlayButton, Chip } from "@/components/kit";
 export const Route = createFileRoute("/quiz-result")({
   head: () => ({
     meta: [
-      { title: "Quiz results — Questly" },
+      { title: "Quiz results — Hivision Academy" },
       { name: "description", content: "See your score, gems earned and accuracy after finishing a quiz." },
-      { property: "og:title", content: "Quiz results — Questly" },
+      { property: "og:title", content: "Quiz results — Hivision Academy" },
       { property: "og:description", content: "Score, gems earned and accuracy after every quiz." },
     ],
   }),

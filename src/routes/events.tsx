@@ -5,9 +5,9 @@ import { Panel, Chip, ProgressBar, PlayButton, ScreenTitle } from "@/components/
 export const Route = createFileRoute("/events")({
   head: () => ({
     meta: [
-      { title: "Events & challenges — Questly" },
+      { title: "Events & challenges — Hivision Academy" },
       { name: "description", content: "Limited-time challenges, weekend quests and seasonal events." },
-      { property: "og:title", content: "Events & challenges — Questly" },
+      { property: "og:title", content: "Events & challenges — Hivision Academy" },
       { property: "og:description", content: "Limited-time challenges and seasonal quests." },
     ],
   }),

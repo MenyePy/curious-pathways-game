@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/streak")({
   head: () => ({
     meta: [
-      { title: "Your streak — Questly" },
+      { title: "Your streak — Hivision Academy" },
       { name: "description", content: "Track your daily streak, freezes and weekly consistency." },
-      { property: "og:title", content: "Your streak — Questly" },
+      { property: "og:title", content: "Your streak — Hivision Academy" },
       { property: "og:description", content: "Track your daily streak and weekly consistency." },
     ],
   }),

@@ -5,10 +5,10 @@ import { Panel, ScreenTitle, Chip } from "@/components/kit";
 export const Route = createFileRoute("/screens")({
   head: () => ({
     meta: [
-      { title: "Screen index — Questly design system" },
-      { name: "description", content: "Every design template in the Questly system: onboarding, lessons, quizzes, social and admin." },
-      { property: "og:title", content: "Screen index — Questly design system" },
-      { property: "og:description", content: "Every design template in the Questly system." },
+      { title: "Screen index — Hivision Academy design system" },
+      { name: "description", content: "Every design template in the Hivision Academy system: onboarding, lessons, quizzes, social and admin." },
+      { property: "og:title", content: "Screen index — Hivision Academy design system" },
+      { property: "og:description", content: "Every design template in the Hivision Academy system." },
     ],
   }),
   component: ScreensPage,
@@ -22,6 +22,7 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/onboarding", label: "Onboarding", emoji: "🧭" },
       { to: "/login", label: "Login", emoji: "🔑" },
       { to: "/register", label: "Register", emoji: "🆕" },
+      { to: "/info", label: "Info & contact", emoji: "📇" },
     ],
   },
   {
@@ -42,8 +43,9 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/daily-goal", label: "Daily goal", emoji: "🎯" },
       { to: "/streak", label: "Streak", emoji: "🔥" },
       { to: "/badges", label: "Badges", emoji: "🎖️" },
-      { to: "/rewards", label: "Points / rewards", emoji: "💎" },
+      { to: "/shop", label: "Shop", emoji: "💎" },
       { to: "/events", label: "Events", emoji: "🎪" },
+      { to: "/notifications", label: "Notifications", emoji: "🔔" },
     ],
   },
   {
@@ -53,6 +55,14 @@ const groups: { name: string; items: { to: string; label: string; emoji: string 
       { to: "/friends", label: "Friends", emoji: "👥" },
       { to: "/leaderboard", label: "Leaderboard", emoji: "🏆" },
       { to: "/settings", label: "Settings", emoji: "⚙️" },
+    ],
+  },
+  {
+    name: "Commerce & legal",
+    items: [
+      { to: "/plans", label: "Payment plans", emoji: "💳" },
+      { to: "/terms", label: "Terms & conditions", emoji: "📜" },
+      { to: "/privacy", label: "Privacy policy", emoji: "🔒" },
     ],
   },
   {
@@ -68,7 +78,7 @@ function ScreensPage() {
   return (
     <AppShell title="Screen index" showStats={false}>
       <div className="mx-auto max-w-3xl space-y-6">
-        <ScreenTitle title="Design templates" subtitle="21 screens sharing one component and token system." />
+        <ScreenTitle title="Design templates" subtitle="28 screens sharing one component and token system." />
         {groups.map((g) => (
           <section key={g.name} className="space-y-3">
             <Chip tone="primary">{g.name}</Chip>

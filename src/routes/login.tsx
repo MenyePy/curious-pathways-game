@@ -5,9 +5,9 @@ import { PlayButton } from "@/components/kit";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Log in — Questly" },
-      { name: "description", content: "Log back in to continue your Questly learning streak." },
-      { property: "og:title", content: "Log in — Questly" },
+      { title: "Log in — Hivision Academy" },
+      { name: "description", content: "Log back in to continue your Hivision Academy learning streak." },
+      { property: "og:title", content: "Log in — Hivision Academy" },
       { property: "og:description", content: "Log back in to continue your learning streak." },
     ],
   }),

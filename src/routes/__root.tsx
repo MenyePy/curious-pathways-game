@@ -77,13 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Questly — Play your way through learning" },
+      { title: "Hivision Academy — Play your way through learning" },
       {
         name: "description",
         content: "A game-style learning journey for kids with lessons, quizzes, streaks and friendly guide avatars.",
       },
-      { name: "author", content: "Questly" },
-      { property: "og:title", content: "Questly — Play your way through learning" },
+      { name: "author", content: "Hivision Academy" },
+      { property: "og:title", content: "Hivision Academy — Play your way through learning" },
       { property: "og:description", content: "A game-style learning journey with lessons, quizzes and streaks." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

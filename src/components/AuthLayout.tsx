@@ -18,7 +18,7 @@ export function AuthLayout({
     <div className="min-h-screen bg-background lg:grid lg:grid-cols-2">
       <div className="hidden flex-col justify-center gap-6 px-12 text-primary-foreground lg:flex [background:var(--gradient-hero)]">
         <span className="float-soft text-7xl">🚀</span>
-        <h2 className="text-4xl">Questly</h2>
+        <h2 className="text-4xl">Hivision Academy</h2>
         <p className="max-w-sm text-sm opacity-90">
           Lessons that feel like levels. Streaks, gems, badges and a guide who cheers you on.
         </p>

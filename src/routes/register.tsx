@@ -6,9 +6,9 @@ import { characters } from "@/data/avatars";
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Create your account — Questly" },
-      { name: "description", content: "Create a Questly profile, choose your guide and start learning." },
-      { property: "og:title", content: "Create your account — Questly" },
+      { title: "Create your account — Hivision Academy" },
+      { name: "description", content: "Create a Hivision Academy profile, choose your guide and start learning." },
+      { property: "og:title", content: "Create your account — Hivision Academy" },
       { property: "og:description", content: "Create a profile, choose your guide and start learning." },
     ],
   }),
@@ -27,6 +27,17 @@ function RegisterPage() {
           <Link to="/login" className="font-bold text-primary-deep underline">
             Log in
           </Link>
+          <span className="mt-3 block">
+            Need access or pricing?{" "}
+            <Link to="/info" className="font-bold text-primary-deep underline">
+              Contact us & see plans
+            </Link>
+          </span>
+          <span className="mt-2 block">
+            By signing up you agree to our{" "}
+            <Link to="/terms" className="underline">Terms</Link> and{" "}
+            <Link to="/privacy" className="underline">Privacy Policy</Link>.
+          </span>
         </>
       }
     >
