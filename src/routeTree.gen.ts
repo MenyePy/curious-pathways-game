@@ -22,6 +22,7 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PlansRouteImport } from './routes/plans'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as QuizResultRouteImport } from './routes/quiz-result'
@@ -99,6 +100,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const PlansRoute = PlansRouteImport.update({
   id: '/plans',
   path: '/plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -181,6 +187,7 @@ export interface FileRoutesByFullPath {
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/plans': typeof PlansRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
@@ -209,6 +216,7 @@ export interface FileRoutesByTo {
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/plans': typeof PlansRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
@@ -238,6 +246,7 @@ export interface FileRoutesById {
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/plans': typeof PlansRoute
+  '/privacy': typeof PrivacyRoute
   '/profile': typeof ProfileRoute
   '/quiz': typeof QuizRoute
   '/quiz-result': typeof QuizResultRoute
@@ -268,6 +277,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/onboarding'
     | '/plans'
+    | '/privacy'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
@@ -296,6 +306,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/onboarding'
     | '/plans'
+    | '/privacy'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
@@ -324,6 +335,7 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/onboarding'
     | '/plans'
+    | '/privacy'
     | '/profile'
     | '/quiz'
     | '/quiz-result'
@@ -353,6 +365,7 @@ export interface RootRouteChildren {
   NotificationsRoute: typeof NotificationsRoute
   OnboardingRoute: typeof OnboardingRoute
   PlansRoute: typeof PlansRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProfileRoute: typeof ProfileRoute
   QuizRoute: typeof QuizRoute
   QuizResultRoute: typeof QuizResultRoute
@@ -459,6 +472,13 @@ declare module '@tanstack/react-router' {
       path: '/plans'
       fullPath: '/plans'
       preLoaderRoute: typeof PlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -569,6 +589,7 @@ const rootRouteChildren: RootRouteChildren = {
   NotificationsRoute: NotificationsRoute,
   OnboardingRoute: OnboardingRoute,
   PlansRoute: PlansRoute,
+  PrivacyRoute: PrivacyRoute,
   ProfileRoute: ProfileRoute,
   QuizRoute: QuizRoute,
   QuizResultRoute: QuizResultRoute,
