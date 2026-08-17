@@ -24,7 +24,7 @@ function BadgesPage() {
         <ScreenTitle title="Badge case" subtitle={`${earned} of ${badges.length} collected`} />
         <ProgressBar value={(earned / badges.length) * 100} tone="accent" />
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {badges.map((b) => (
             <Panel key={b.id} className={cn("text-center", !b.earned && "bg-muted opacity-70")}>
               <span className={cn("inline-block text-4xl", !b.earned && "grayscale")}>{b.emoji}</span>
