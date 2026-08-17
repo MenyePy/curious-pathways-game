@@ -27,7 +27,7 @@ function PlansPage() {
         <ScreenTitle title="Payment plans" subtitle="Pick the pace that suits the learner. Cancel any time." />
         <AvatarSpeech characterId="nova" expression="happy" text="Longer plans cost less per day — the 3 month one is the sweet spot!" />
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((p) => (
             <Panel key={p.id} tone={p.tone} className="flex flex-col gap-3">
               <div className="flex items-start justify-between gap-3">
