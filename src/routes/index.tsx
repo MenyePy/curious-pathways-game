@@ -21,7 +21,7 @@ function Home() {
   const active = sections[0]!;
   return (
     <AppShell title="Learning path">
-      <div className="mx-auto max-w-md space-y-6 lg:max-w-2xl">
+      <div className="mx-auto max-w-md space-y-6 md:max-w-2xl lg:max-w-3xl">
         <Panel tone="hero" className="space-y-3">
           <Chip tone="accent" className="bg-white/25 text-white">
             Section 1 of 3

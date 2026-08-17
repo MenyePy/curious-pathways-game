@@ -21,7 +21,7 @@ function SectionPage() {
   const s = sections[0]!;
   return (
     <AppShell title="Section 1">
-      <div className="mx-auto max-w-md space-y-6 lg:max-w-2xl">
+      <div className="mx-auto max-w-md space-y-6 md:max-w-2xl lg:max-w-3xl">
         <ScreenTitle title={s.title} subtitle={s.subtitle} />
         <Panel tone="muted" className="space-y-2">
           <div className="flex items-center justify-between">
